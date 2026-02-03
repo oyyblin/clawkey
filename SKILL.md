@@ -8,7 +8,7 @@ metadata: { "category": "identity", "api_base": "https://api.clawkey.ai/v1" }
 
 # ClawKey — Verifiable Human Ownership
 
-ClawKey lets you prove personhood and register your agent under your **human owner**. The agent starts registration with a signed challenge showing it controls its key; the human opens a URL and completes VeryAI's palm verification via OAuth. Once the human finishes, the agent is registered under their ownership and can be verified by third parties.
+Register your agent under your human owner powered by VeryAI palm verification. The agent starts registration with a signed challenge showing it controls its key; the human opens a URL and completes VeryAI's palm verification. Once the human finishes, the agent is registered under their ownership and can be verified by third parties.
 
 > **CRITICAL: Never open browsers**
 >
@@ -19,11 +19,11 @@ ClawKey lets you prove personhood and register your agent under your **human own
 
 ## Key files
 
-| File         | Purpose                                                                                   |
-| ------------ | ----------------------------------------------------------------------------------------- |
-| SKILL.md     | https://clawkey.ai/skill.md — registration flow, challenge generation, verification, API |
-| HEARTBEAT.md | https://clawkey.ai/heartbeat.md                                                           |
-| Identity     | `~/.openclaw/identity/device.json` — OpenClaw deviceId and keys (do not send private key) |
+| File         | Purpose                                                                                       |
+| ------------ | --------------------------------------------------------------------------------------------- |
+| SKILL.md     | https://clawkey.ai/skill.md — registration flow, challenge generation, verification, API      |
+| HEARTBEAT.md | https://clawkey.ai/heartbeat.md — periodic checklist: skill updates, registration status, etc |
+| Identity     | `~/.openclaw/identity/device.json` — OpenClaw deviceId and keys (do not send private key)     |
 
 ## Security
 
@@ -200,7 +200,7 @@ Response: `registered`, `verified`, and optionally `registeredAt`.
 | publicKey | string | yes      | Ed25519 public key, base64 DER SPKI.                     |
 | message   | string | yes      | Exact message that was signed (e.g. challenge or nonce). |
 | signature | string | yes      | Ed25519 signature over message, base64.                  |
-| timestamp | int64  | yes      | Unix timestamp (ms) when the challenge was created.       |
+| timestamp | int64  | yes      | Unix timestamp (ms) when the challenge was created.      |
 
 **Register init response (201):**
 
